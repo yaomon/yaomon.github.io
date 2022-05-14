@@ -1,0 +1,169 @@
+.introBlock {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;
+    background: linear-gradient(180deg, rgb(70, 70, 90) 0%, rgb(50, 50, 50) 100%);
+    box-shadow: inset 0px 5px 5px -3px rgb(0, 0, 0, 0.85);
+    margin-bottom: 30px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introBlock p {
+    font-size: 1.5em;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.title {
+    font-size: 2em;
+    padding-bottom: 20px;
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 3px black);
+}
+
+.titleLine {
+    width: 200px;
+    height: 4px;
+    background-color: rgb(230, 230, 230);;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.trailerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    background: linear-gradient(black 0%, transparent 100%);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background-image: url("images/background.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+    animation: logoFade 1s 1;
+    -webkit-animation: logoFade 0.5s 1;
+    width: 1063px;
+    height: 243px;
+    margin-top: 20px;
+}
+
+body {
+    height: 100vh;
+    background: rgb(50, 50, 50);
+    color: rgb(230, 230, 230);
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes logoFade {
+    from {
+        opacity: 0;
+        margin-top: -300px;
+        width: 1596px;
+        height: 365px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 20px;
+        width: 1063px;
+        height: 243px;
+    }
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+.trailerWrapper {
+    position: relative;
+    background-color: rgb(20, 20, 20);
+    outline: 8px solid rgb(20, 20, 20);
+    outline-offset: -8px;
+    margin-top: 50px;
+}
+
+.trailerShadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: inset 20px 20px 25px rgba(0, 0, 0, 0.65);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.trailerFrameDecor {
+    position: absolute;
+    transform: scale(200%);
+    -webkit-transform: scale(200%);
+    -moz-transform: scale(200%);
+    -ms-transform: scale(200%);
+    -o-transform: scale(200%);
+}
+
+#tlFrame {
+    left: -7px;
+    top: -10px;
+    z-index: -1;
+}
+
+#trFrame {
+    right: -7px;
+    top: -10px;
+    z-index: -1;
+}
+
+#blFrame {
+    left: -7px;
+    bottom: -10px;
+    z-index: 1;
+}
+
+#brFrame {
+    right: -7px;
+    bottom: -10px;
+    z-index: 1;
+}
+
+.soMedBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 150px;
+    margin-top: 100px;
+    background: rgb(20, 20, 20);
+    box-shadow: 0px -3px 6px rgb(0, 0, 0, 0.95);
+}
+
+.soMedBlock a {
+    height: 100%;
+    width: 254px;
+    display: flex;
+}
+
+.soMedBlock img {
+    transform: scale(80%);
+    -webkit-transform: scale(80%);
+    -moz-transform: scale(80%);
+    -ms-transform: scale(80%);
+    -o-transform: scale(80%);
+}
