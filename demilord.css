@@ -1,30 +1,72 @@
+.introTriangle {
+    background: rgb(50, 50, 50);
+    width: 200%;
+    height: 400px; 
+    position: absolute;
+    left: -50%;
+    top: -50px;
+    transform: rotate(5deg);
+    box-shadow: 0px -3px 3px rgba(0, 0, 0, 0.65);
+}
+
+.introTriangleWrapper {
+    overflow: visible;
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
 .introBlock {
-    text-align: center;
     width: 100%;
     padding-bottom: 50px;
-    background: linear-gradient(180deg, rgb(70, 70, 90) 0%, rgb(50, 50, 50) 100%);
-    box-shadow: inset 0px 5px 5px -3px rgb(0, 0, 0, 0.85);
     margin-bottom: 30px;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .introBlock p {
     font-size: 1.5em;
-    margin: auto;
     margin-top: 30px;
     margin-bottom: 0;
-    width: 100%;
+    width: 80%;
     max-width: 1200px;
+    align-self: flex-start;
+    text-align: left;
+    margin-left: 17%;
 }
 
+.introTitle,
 .title {
     font-size: 2em;
     padding-bottom: 20px;
     font-weight: bold;
     filter: drop-shadow(1px 1px 3px black);
+}
+
+.introTitle {
+    width: 80%;
+    max-width: 800px;
+    align-self: flex-start;
+    margin-left: 7%;
+    margin-top: -80px;
+}
+
+.introTitle b {
+    background: -webkit-linear-gradient(90deg, rgb(255, 124, 124), rgb(255, 222, 222));
+    font-size: 1.5em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.introTitle .topLine {
+    text-align: left;
+    float: left;
+}
+
+.introTitle .bottomLine {
+    text-align: right;
+    float: right;
 }
 
 .titleLine {
@@ -45,46 +87,59 @@
 }
 
 .header {
-    background: linear-gradient(black 0%, transparent 100%);
-    height: 300px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     background-image: url("images/background.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
+    padding: 30px 0;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .logo {
     animation: logoFade 1s 1;
     -webkit-animation: logoFade 0.5s 1;
-    width: 1063px;
-    height: 243px;
-    margin-top: 20px;
+    object-fit: contain;
+    width: 100%;
+    max-width: 1142px;
+    z-index: 2;
+}
+
+.eclo1 {
+    z-index: 1;
+    position: absolute;
+    right: -4%;
+    top: 0px;
+    width: 35%;
+    transform-origin: middle right;
 }
 
 body {
     height: 100vh;
-    background: rgb(50, 50, 50);
     color: rgb(230, 230, 230);
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    background: rgb(50, 50, 50);
 }
 
 @keyframes logoFade {
     from {
         opacity: 0;
         margin-top: -300px;
-        width: 1596px;
-        height: 365px;
+        width: 100%;
+        max-width: 100%;
     }
     to {
         opacity: 1;
-        margin-top: 20px;
-        width: 1063px;
-        height: 243px;
+        margin-top: 0px;
+        max-width: 1142px;
     }
 }
 
@@ -98,6 +153,15 @@ img {
     outline: 8px solid rgb(20, 20, 20);
     outline-offset: -8px;
     margin-top: 50px;
+    max-width: 1120px;
+    max-height: 730px;
+    width: 100%;
+    aspect-ratio: 112/73;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .trailerShadow {
@@ -117,6 +181,8 @@ img {
     -moz-transform: scale(200%);
     -ms-transform: scale(200%);
     -o-transform: scale(200%);
+    pointer-events: none;
+    user-select: none;
 }
 
 #tlFrame {
@@ -148,22 +214,19 @@ img {
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: 150px;
-    margin-top: 100px;
+    margin-top: 80px;
     background: rgb(20, 20, 20);
     box-shadow: 0px -3px 6px rgb(0, 0, 0, 0.95);
 }
 
 .soMedBlock a {
+    width: 30%;
+    max-width: 200px;
     height: 100%;
-    width: 254px;
     display: flex;
 }
 
 .soMedBlock img {
-    transform: scale(80%);
-    -webkit-transform: scale(80%);
-    -moz-transform: scale(80%);
-    -ms-transform: scale(80%);
-    -o-transform: scale(80%);
+    width: 100%;
+    height: 100%;
 }
