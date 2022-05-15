@@ -10,7 +10,11 @@
             $('.logo').css({
                 'margin-top' : -($(this).scrollTop()/2) + "px",
                 'margin-left' : -($(this).scrollTop()/3) + "px"
-             }); 
+            }); 
+             
+            $('.trailerVid').css({
+                'opacity' : '' + 1/(Math.max($(this).offset().top-$(this).scrollTop(), 1))
+            }); 
         
          });
     });

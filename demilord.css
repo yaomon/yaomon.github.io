@@ -53,21 +53,21 @@ img {
     float: right;
 }
 
-.introTitle,
+.titleText,
 .title {
     padding-bottom: 20px;
     font-weight: bold;
     filter: drop-shadow(1px 1px 3px black);
+    font-family: 'Press Start 2P';
 }
 
 .titleText {
     width: 80%;
-    max-width: 800px;     
-    font-family: 'Press Start 2P';
+    max-width: 800px; 
     font-size: calc(12px + 1.2vw);
 }
 
-.titleText  b {
+.titleText b, .title {
     background: -webkit-linear-gradient(90deg, rgb(255, 124, 124), rgb(255, 222, 222));
     font-size: 1.5em;
     text-transform: uppercase;
@@ -118,15 +118,3 @@ img {
 .title {
     font-size: 2em;
 }
-
-.titleLine {
-    width: 200px;
-    height: 4px;
-    background-color: rgb(230, 230, 230);;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-}
-
