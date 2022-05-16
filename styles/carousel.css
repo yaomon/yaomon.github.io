@@ -1,0 +1,91 @@
+.carouselButtons {
+    position: absolute;
+    bottom: 50%;
+    right: 0px;
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    justify-content: space-between;    
+    z-index: 1;
+}
+
+.carouselButtons button {
+    border: none;
+    background: transparent;
+    font-size: 2em;
+    width: 70px;
+    height: 70px;
+    color: rgba(220, 220, 220, 0.7);
+    font-weight: bolder;
+    transition: 0.2s;
+    filter: drop-shadow(2px 2px 2px black);
+}
+
+.carouselButtons button:hover {
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.carouselList {
+    height: 50%;
+    position: relative;
+    overflow: visible;
+}
+
+.carousel {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    height: 500px;
+}
+
+.carouselItem {
+    position: absolute;
+    bottom: 0;
+    transform-origin: right bottom;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+.carouselInfo {
+    height: 50%;
+}
+
+.carouselTitle {
+    padding-bottom: 20px;
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 3px black);
+    font-family: 'Press Start 2P';
+}
+
+.carouselDesc,
+.carouselFlavor,
+.carouselTitle {
+    padding-left: 10%;
+    box-sizing: border-box;
+    font-size: calc(12px + 0.6vw);
+    width: 95%;
+}
+
+.carouselDesc {    
+    opacity: 0.85;
+}
+
+.carouselFlavor {    
+    opacity: 0.7;
+}
+
+
+@media only screen and (min-width: 760px) {
+    .carouselTitle {
+        margin-top: -30px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .carouselTitle {
+        margin-top: 10px;
+    }
+}

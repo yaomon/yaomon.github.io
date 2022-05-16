@@ -8,93 +8,131 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
-        <link rel="stylesheet" href="demilord.css">
+        <link rel="stylesheet" href="styles/demilord.css">
         <script
-            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-            crossorigin="anonymous"></script>
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
         <script src="demilord.js" async defer></script>
     </head>
-    <body>        
-        <div class="header">
-            <img class="logo" src="images/logo.gif" />       
-            <div class="introTriangleWrapper"><div class="introTriangle"></div></div>
-            <img class="eclo1" src="images/eclo1.png" />       
-        </div>
-        
-        <div class="introBlock contentBlock">
-            <div class="contentWrapper">
-                <div class="introTitle titleText">
-                    <div class="topLine">A <b>new era</b> of</div>
-                    <br><div class="bottomLine"><b>rogue-lite action platformers!</b></div>
-                </div>
-                <p class="blockParagraph">
-                    <b>Demilord</b> is an upcoming <b>rogue-lite action platformer</b> focused on deep,
-                    <b>combo-based combat</b> with <b>threatening enemies</b>, <b>varied builds</b>, <b>fluid movement</b>,
-                    and <b>calculated gameplay</b>.
-                </p>
+    <body>
+        <div class="mobileWrapper">
+            <div class="header">
+                <img class="logo" src="images/logo.gif" />       
+                <div class="introTriangleWrapper"><div class="introTriangle"></div></div>
+                <img class="eclo1" src="images/eclo1.png" />       
             </div>
-        </div>
-        <div class="abilitiesBlock">
-
-        </div>
-        <!-- Discuss character and story elements -->
-        <div class="characterBlock">
             
-        </div>
-
-        <div class="enemiesBlock contentBlock">
-            <div class="screenCarousel enemyScreens">
-                <img src="images/screenshots/placeholder.png">
-            </div>
-            <div class="contentWrapper">
-                <div class="enemiesTitle titleText">
-                    <div class="topLine"><b>Each fight</b> could</div> 
-                    <br><div class="bottomLine">be <b>your last!</b></div>
-                </div>
-                <p class="blockParagraph">
-                    In <b>Demilord</b>, each <b>fight</b> is <b>menacing</b>, and each <b>enemy</b> is a <b>menace</b>. No more running up to a 
-                    crowd of enemies and mashing the attack key until everything dies...
-                </p>
-            </div>
-        </div>
-        <!-- Discuss consumables, relics, and rogue-like elements -->
-        <div class="powerupBlock">
-
-
-        </div>
-
-        <div class="movementBlock">
-
-            
-        </div>
-
-        
-        
-        <div class="trailerBlock">
-            <div class="title">Trailer</div>
-            <div class="trailerFrameWrapper">
-                <img id="tlFrame" src="images/ui_menu_corner.png" class="trailerFrameDecor">
-                <img id="trFrame" src="images/ui_menu_corner3.png" class="trailerFrameDecor">
-                <img id="blFrame" src="images/ui_menu_corner2.png" class="trailerFrameDecor">
-                <img id="brFrame" src="images/ui_menu_corner4.png" class="trailerFrameDecor">
-            
-                <div class="trailerWrapper">                
-                    <iframe class="trailerVid" src="https://www.youtube.com/embed/TRZg8uHjkt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="trailerShadow"></div>
+            <div class="introBlock contentBlock">
+                <div class="contentWrapper">
+                    <div class="introTitle titleText">
+                        <div class="topLine">A <b>new era</b> of</div>
+                        <br><div class="bottomLine"><b>rogue-lite action platformers!</b></div>
+                    </div>
+                    <p class="blockParagraph">
+                        <b>Demilord</b> is an upcoming <b>rogue-lite action platformer</b> focused on deep,
+                        <b>combo-based combat</b> with <b>threatening enemies</b>, <b>varied builds</b>, <b>fluid movement</b>,
+                        and <b>calculated gameplay</b>.
+                    </p>
                 </div>
             </div>
-        </div>
-        <div class="soMedBlock">
-            <a href="https://www.instagram.com/silentsunstudios/">
-                <img src="images/insta.png" />
-            </a>
-            <a href="https://twitter.com/DemilordGame">
-                <img src="images/twitter.png" />
-            </a>
-            <a href="https://www.youtube.com/channel/UCpBaCAAxQmnpqZO2ohZlWIg/">
-                <img src="images/yt.png" />
-            </a>
+            <br>
+            <div class="line">
+                <img src="images/line.png" />
+            </div>
+            <br>
+            <div class="abilitiesBlock">
+
+            </div>
+            <!-- Discuss character and story elements -->
+            <div class="characterBlock">
+                
+            </div>
+            <!-- Discuss standard enemies and enemy abilities -->
+            <div class="enemiesBlock contentBlock">
+                <div class="enemyCarousel carousel">
+                    <div class="carouselList">
+                        <img class="carouselItem" id="acolyte" src="images/enemies/acolyte.gif"/>
+                        <img class="carouselItem" id="endalus" src="images/enemies/endalus.gif"/>
+                        <img class="carouselItem" id="herald" src="images/enemies/herald.gif"/>
+                        <img class="carouselItem" id="sniper" src="images/enemies/sniper.gif"/>
+                        <img class="carouselItem" id="whirleant"src="images/enemies/whirleant.gif"/>
+                        <img class="carouselItem" id="zerkape" src="images/enemies/zerkape.gif"/>
+                    </div>
+                    <div class="carouselButtons">
+                        <button class="prevButton">&lt;</button>
+                        <button class="nextButton">&gt;</button>
+                    </div>
+                    <div class="carouselInfo">
+                        <div class="carouselTitle">Solunar Acolyte</div>
+                        <div class="carouselDesc">
+                            The Solunar path focuses on spells that gain special properties depending on the time of day. 
+                            Their acolytes utilize powerful magics in flames, nature, and shadow.
+                        </div>
+                        <br>
+                        <div class="carouselFlavor">
+                            "<i>The turbulent intensity of the sun, matched only by the frigid stillness of the shadows...
+                            We shall have it all...</i>" <br>- Solunar Magus Slanovon
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contentWrapper">
+                    <div class="enemiesTitle titleText">
+                        <div class="topLine"><b>Each fight</b> could</div> 
+                        <br><div class="bottomLine">be <b>your last!</b></div>
+                    </div>
+                    <p class="blockParagraph">
+                        In <b>Demilord</b>, each <b>fight</b> is <b>menacing</b>, and each <b>enemy</b> is a <b>menace</b>. No more running up to a 
+                        crowd of enemies and mashing the attack key until everything dies...<br><br>
+                        Whether it's <b>fireballs</b>, <b>spears</b>, <b>runes</b>, <b>enchanted artifacts</b>, or <b>interdimensional, reality-warping constructions of 
+                        ancient times</b>, each enemy is sure to <b>enthrall</b> and <b>entice</b> with a motley slew of <b>attacks</b> and <b>defenses!</b>
+                    </p>
+                </div>
+            </div>
+            <!-- Discuss consumables, relics, and rogue-like elements -->
+            <div class="powerupBlock">
+
+
+            </div>
+
+            <div class="movementBlock">
+
+                
+            </div>
+
+            <br>
+            <div class="line">
+                <img src="images/line.png" />
+            </div>
+            <br>
+            
+            <div class="trailerBlock">
+                <div class="title">Trailer</div>
+                <div class="trailerFrameWrapper">
+                    <img id="tlFrame" src="images/ui_menu_corner.png" class="trailerFrameDecor">
+                    <img id="trFrame" src="images/ui_menu_corner3.png" class="trailerFrameDecor">
+                    <img id="blFrame" src="images/ui_menu_corner2.png" class="trailerFrameDecor">
+                    <img id="brFrame" src="images/ui_menu_corner4.png" class="trailerFrameDecor">
+                
+                    <div class="trailerWrapper">                
+                        <iframe class="trailerVid" src="https://www.youtube.com/embed/TRZg8uHjkt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="trailerShadow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="soMedBlock">
+                <a href="https://www.instagram.com/silentsunstudios/">
+                    <img src="images/insta.png" />
+                </a>
+                <a href="https://twitter.com/DemilordGame">
+                    <img src="images/twitter.png" />
+                </a>
+                <a href="https://www.youtube.com/channel/UCpBaCAAxQmnpqZO2ohZlWIg/">
+                    <img src="images/yt.png" />
+                </a>
+            </div>
         </div>
     </body>
 </html>
