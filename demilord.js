@@ -40,12 +40,10 @@
             if (index === 0) {
                 $(this).css({
                     bottom: "0px",
-                    'z-index': 10 - index,
+                    'z-index': -index,
                     'transform': 'scale(400%)',
-                    'filter': 'drop-shadow(0px 1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(0px -1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(1px 0px 1px rgba(200, 200, 200, 0.2)) drop-shadow(-1px 0px 1px rgba(200, 200, 200, 0.2))'
-                });
-                $(this).css({
-                    right: 100 - $(this).width() * 1.5 + "px",
+                    'filter': 'drop-shadow(0px 1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(0px -1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(1px 0px 1px rgba(200, 200, 200, 0.2)) drop-shadow(-1px 0px 1px rgba(200, 200, 200, 0.2))',
+                    right: 180 - $(this).width() * 2 + "px",
                 });
                 $(this).addClass('selected');
                 let info = $(this).data("info");
@@ -60,12 +58,10 @@
                     bottom: index * 10 + 50 + "px",
                     'z-index': -index,
                     'transform': 'scale(' + (200 - index * 15) + '%)',
-                    'filter': 'blur(' + index/2 + 'px) brightness(' + (100 - 5 * index) + '%)'
+                    'filter': 'blur(' + index/2 + 'px) brightness(' + (100 - 7 * index) + '%)',
+                    right: index * 90  + 200 - $(this).width() + "px"
                 });
 
-                $(this).css({
-                    right: index * 80  + 200 - $(this).width()/2 + "px"
-                });
                 let originalSrc = $(this).attr("src");
                 let newSrc = originalSrc.replaceAll('_active', '');
                 $(this).attr("src", newSrc);
