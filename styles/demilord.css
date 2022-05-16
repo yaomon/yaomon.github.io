@@ -49,15 +49,19 @@ img {
 .contentWrapper {
     display: flex;
     flex-direction: column;
-    flex-grow: 2;
 }
 
 .blockParagraph {
     font-size: calc(10px + 0.8vw);
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 80%;
-    max-width: 800px;   
+
+}
+
+.titleText,
+.blockParagraph {
+    width: 90%;
+    max-width: 900px;
 }
 
 .blockParagraph b {
@@ -83,14 +87,12 @@ img {
 }
 
 .titleText {
-    width: 80%;
-    max-width: 800px; 
-    font-size: calc(10px + 1.1vw);
+    font-size: calc(10px + 1.0vw);
 }
 
 .titleText b, .title, .carouselTitle {
     background: -webkit-linear-gradient(90deg, rgb(255, 124, 124), rgb(255, 222, 222));
-    font-size: 1.5em;
+    font-size: 1.4em;
     text-transform: uppercase;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -111,19 +113,21 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap-reverse;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
 }
 
 .introTitle {
     align-self: flex-start;
-    margin-left: 10%;
+    padding-left: 10%;
+    box-sizing: border-box;
     margin-top: -80px;
 }
 
 .enemiesTitle {
     align-self: flex-end;
-    margin-right: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
     padding-top: 20px;
 }
 
