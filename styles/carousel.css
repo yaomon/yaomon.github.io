@@ -112,7 +112,8 @@
 .carouselStats {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 90%;
+    max-width: 400px;
 }
 
 .rarityText {
