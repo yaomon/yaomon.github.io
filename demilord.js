@@ -32,84 +32,250 @@
         });
     }
 
+    function addCharInfo() {
+        $("#daegon").data("info", {
+            name: "Dae Gon",
+            title: "Wyvern of the West",
+            desc: " Dae Gon is the second in command in the powerful ghost organization known as The Decade. He has great ambition, looking to overthrow the minor deity at the head of the organization by reviving the power of the old dragons and eventually ascending into godhood.",
+            flavor: "\"<i>By my hand will the strength of dieties turn paltry...</i>\""
+        });
+        $("#klous").data("info", {
+            name: "Klous",
+            title: "Grand Researcher",
+            desc: "Klous has an unhealthy obsession with knowledge. Though he isn’t particularly without morals, he has vowed to let his pursuit for knowledge guide his every action. He is convinced that it is the only way to guarantee progress for humanity overall.",
+            flavor: "\"<i>Curious, though this specific peculiarity fails to pertain to the discussion at hand.</i>\""
+        });
+        $("#mystery").data("info", {
+            name: "???",
+            title: "??????",
+            desc: "An odd enitity that not many has seen until recently. It bears an uncanny resemblance to one specific sarcastic, masked Demilord.",
+            flavor: "\"<i>AAaa---aeiiii cccce plee s hhheellp</i>\""
+        });
+        $("#riadne").data("info", {
+            name: "Riadne",
+            title: "The Bounty Hunter",
+            desc: "A bashful deserter of the Gunrunners, Riadne took on every odd job that came her way. Not many knows what she does with all her bounty, but her wallet always seems to be empty...",
+            flavor: "\"<i>Umm... I'll take it all. Please. Thanks... Oh! Could I have my payment in advance?</i>\""
+        });
+        $("#yesnila").data("info", {
+            name: "Yesnila",
+            title: "Divine Constra",
+            desc: "Yesnila was born with a devastating bloodline mutation, accelerating the growth of her strength beyond what her body could handle. Thus, the repalcements began, part by part...",
+            flavor: "\"<i>While I may walk every realm, I will survive in none of them.</i>\""
+        });
+        $("#asthia").data("info", {
+            name: "Asthia",
+            title: "Patron of Flames",
+            desc: "Former Principle Grand Magus of Flame Magic, Asthia abandoned her prior life in pursuit of becoming an Angekok and finding the secrets of immortality.",
+            flavor: "\"<i>Oh sweetheart, perhaps you ought to -- Ah... well... perhaps a more hands-on lesson then? </i>\""
+        });
+    }
+
+    function addAbilInfo() {
+        $("#bloom").data("info", {
+            name: "Rising Bloom",
+            rarity: "uncommon",
+            cost: "3",
+            desc: "Perform a 4 hit spin that pulls in enemies hit. Hits one extra time on perfect strikes.",
+            flavor: "There are few who can liberate themselves from the raging cyclones of the Fan of Typh."
+        });
+        $("#crown").data("info", {
+            name: "Crown of Impurity",
+            rarity: "epic",
+            cost: "4",
+            desc: "Spawn 5 projectiles. Aim them  while paused, then they fire sequentially in the aimed direction, dealing damage to the first enemy hit.",
+            flavor: "\"<i>The Weeping Emperor knelt, facing his end... Above him, 5 sinister infusions of impure Mana orbited...</i>\" <br>- The Tales of Vevenia"
+        });
+        $("#exec").data("info", {
+            name: "Galeforce Execution",
+            rarity: "common",
+            cost: "3",
+            desc: "Perform a dash slash forward that damages and knocks up all enemies hit.",
+            flavor: "\"<i>Be gone with the fleeting dust...</i>\" <br>- Unknown"
+        });
+        $("#rage").data("info", {
+            name: "Titan's Rage",
+            rarity: "epic",
+            cost: "4",
+            desc: "Slam down with a giant club, dealing significant damage to all enemies hit and knocking up enemies around the area hit.",
+            flavor: "An advanced technique involving infusing the user with the essence of ancient Titans."
+        });
+    }
+
     function positionCarouselItems(carouselEl) {
         let items = $(carouselEl.find(".carouselItem"));
         let desc = $($(carouselEl).siblings(".carouselInfo"));
+        let centerVert = carouselEl.data("centerVert");
+        let numItems = items.length;
         items.removeClass('selected');
         items.each(function( index ) {
             if (index === 0) {
+                let bottom = 0;
+                if (centerVert) {
+                    // Subtract half height to center vertically
+                    bottom += $(this).height() * -2;
+                }
+                // Position selected element
                 $(this).css({
-                    bottom: "0px",
+                    bottom: bottom + "px",
                     'z-index': -index,
                     'transform': 'scale(400%)',
                     'filter': 'drop-shadow(0px 1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(0px -1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(1px 0px 1px rgba(200, 200, 200, 0.2)) drop-shadow(-1px 0px 1px rgba(200, 200, 200, 0.2))',
-                    right: 180 - $(this).width() * 2 + "px",
-                });
-                $(this).addClass('selected');
-                let info = $(this).data("info");
-                desc.find(".carouselTitle").html(info.name);
-                desc.find(".carouselDesc").html(info.desc);
-                desc.find(".carouselFlavor").html(info.flavor);
-                let originalSrc = $(this).attr("src");
-                let newSrc = originalSrc.split('.')[0] + "_active.gif";
-                $(this).attr("src", newSrc);
-            } else {
-                $(this).css({
-                    bottom: index * 10 + 50 + "px",
-                    'z-index': -index,
-                    'transform': 'scale(' + (200 - index * 15) + '%)',
-                    'filter': 'blur(' + index/2 + 'px) brightness(' + (100 - 7 * index) + '%)',
-                    right: index * 90  + 200 - $(this).width() + "px"
+                    right: 180 - $(this).width() * 2 + "px", // Lots of math here to "center" the bottom right origin image
                 });
 
-                let originalSrc = $(this).attr("src");
-                let newSrc = originalSrc.replaceAll('_active', '');
-                $(this).attr("src", newSrc);
+                $(this).addClass('selected');
+                // Update info
+                let info = $(this).data("info");
+                if(info !== undefined) {
+                    desc.find(".carouselTitle").html(info.name);
+                    desc.find(".carouselDesc").html(info.desc);
+                    desc.find(".carouselFlavor").html(info.flavor);
+                    if ('cost' in info) {
+                        desc.find(".costText").html(info.cost);
+                    }
+                    if ('title' in info) {
+                        desc.find(".subtitleText").html(info.title);
+                    }
+                    if ('durability' in info) {
+                        desc.find(".durabilityText").html(info.durability);
+                    }
+                    if ('rarity' in info) {
+                        let rarityText = desc.find(".rarityText");
+                        rarityText.removeClass("common uncommon rare epic legendary").addClass(info.rarity);
+                        rarityText.html(info.rarity);
+                    }
+                }
+
+                // Change to active animation
+                if (carouselEl.data("hasActive")) {
+                    let originalSrc = $(this).attr("src");
+                    let newSrc = originalSrc.split('.')[0] + "_active.gif";
+                    $(this).attr("src", newSrc);
+                }
+            } else {
+                let bottom = 20 + index * 20;
+                let scale = (200 - index * 15);
+                let baseRightOffset = (index * 540/numItems)  + 200;
+                if (centerVert) {
+                    // Subtract half height to center vertically
+                    bottom += $(this).height() * (scale/-200);
+                }
+
+                // Position idle element
+                $(this).css({
+                    bottom: bottom + "px",
+                    'z-index': -index,
+                    'transform': 'scale(' + scale + '%)',
+                    'filter': 'blur(' + index +
+                        'px) brightness(' + (100 - 5 * index) +
+                        '%) saturate(' + (100 - 5 * index) +
+                        '%) contrast('+ (100 - 5 * index) +
+                        '%) opacity('+ (100 - 5 * index) +
+                        '%)',
+                    right: baseRightOffset - ($(this).width() * (scale/200)) + "px" // Lots of math here to "center" the bottom right origin image
+                });
+
+                // Change out of active animation
+                if (carouselEl.data("hasActive")) {
+                    let originalSrc = $(this).attr("src");
+                    let newSrc = originalSrc.replaceAll('_active', '');
+                    $(this).attr("src", newSrc);
+                }
             }
 
         });
     }
 
+    function fadeOnScroll() {
+        // Fade content toward top starting from 20% down
+        let startPos = 0.2;
+        // Cache window object
+        let $w = $(window);
+        // Go through each element and check its relative position within the viewport
+        $('.fadeScroll').each(function() {
+            // Get current relative position in viewport, based on 5/8th the way down the element
+            let pos = ($(this).offset().top + $(this).height() * 5/8) - $w.scrollTop();
+            // Get viewport height
+            let vh = $w.height();
+            if (pos < vh * startPos) {
+            // If element has past the starting threshold, we fade it
+                $(this).css('opacity', pos / (vh * startPos));
+            } else {
+                // Fade content toward top starting from 80% down
+                let startPos = 0.8;
+                // Get current relative position in viewport, based on 1/4th the way down the element
+                let pos = ($(this).offset().top + $(this).height() * 1/4) - $w.scrollTop();
+                // Get viewport height
+                if (pos > vh * startPos) {
+                    // If element has past the bottom threshold, we fade it
+                    $(this).css('opacity',  1 - (pos - (vh * startPos))/(vh - (vh * startPos)));
+                } else {
+                    $(this).css('opacity', 1);
+                }
+            }
+        });
+    }
+
+    function fadeInHeader() {
+        $('.navBar').css({
+            'opacity' : $('.mobileWrapper').scrollTop()/300,
+        });
+    }
+
+    function hookNavEvents() {
+        $('#toAbil').click(function() {
+            $('.abilitiesBlock')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+        });
+        $('#toChar').click(function() {
+            $('.charactersBlock')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+        });
+        $('#toEnem').click(function() {
+            $('.enemiesBlock')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+        });
+        $('#toPower').click(function() {
+            $('.powerupsBlock')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+        });
+        $('#toMove').click(function() {
+            $('.movementBlock')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+        });
+        $('#toMedia').click(function() {
+            $('.trailerBlock')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+        });
+    }
+
     $( document ).ready(function() {
         $('.mobileWrapper').scroll(function () {
-
-            $('.eclo1').css({
-               'top' : -($(this).scrollTop()) + "px",
-               'right' : -3 - ($(this).scrollTop()/50) + "%"
-            });
-
-            $('.logo').css({
-                'margin-top' : -($(this).scrollTop()) + "px",
-                'margin-left' : -($(this).scrollTop()/3) + "px"
-            });
-
-            // Fade trailer in on scroll
-            let offsetBottom = $('.trailerVid').offset().top + $('.trailerVid').outerHeight(true);
-            let scrollBottom = $(window).scrollTop() + $(window).height();
-            let offsetDiff = offsetBottom - scrollBottom;
-            let opacityFactor = 50/(Math.max(offsetDiff, 1));
-            let scaledOpacityFactor = opacityFactor * 0.9 + 0.1; // Always at least 0.1
-            $('.trailerVid').css({
-                'opacity' : Math.min(scaledOpacityFactor, 1),
-            });
+            fadeOnScroll();
         });
+        $('.mobileWrapper').trigger('scroll');
         addEnemyInfo();
-
+        addAbilInfo();
+        addCharInfo();
+        hookNavEvents();
         // Carousel
-        positionCarouselItems($(".enemyCarousel"));
         $(".nextButton").click(function() {
             let carouselEl = $($(this).parent()).siblings(".carouselList");
             let firstEl = $($(carouselEl).find(".carouselItem")).first();
             $(firstEl).detach();
             $(carouselEl).append(firstEl);
             positionCarouselItems(carouselEl);
-        })
+        });
         $(".prevButton").click(function() {
             let carouselEl = $($(this).parent()).siblings(".carouselList");
             let lastEl = $($(carouselEl).find(".carouselItem")).last();
             $(lastEl).detach();
             $(carouselEl).prepend(lastEl);
             positionCarouselItems(carouselEl);
-        })
+        });
+        $(".abilityCarousel").find((".carouselList")).data("centerVert", true);
+        $(".abilityCarousel").find((".carouselList")).data("hasActive", true);
+        $(".enemyCarousel").find((".carouselList")).data("centerVert", false);
+        $(".enemyCarousel").find((".carouselList")).data("hasActive", true);
+        $(".characterCarousel").find((".carouselList")).data("centerVert", false);
+        $(".characterCarousel").find((".carouselList")).data("hasActive", false);
+        positionCarouselItems($(".abilityCarousel").find((".carouselList")), true);
+        positionCarouselItems($(".characterCarousel").find((".carouselList")), false);
+        positionCarouselItems($(".enemyCarousel").find((".carouselList")), false);
     });
 })();

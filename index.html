@@ -19,14 +19,26 @@
     </head>
     <body>
         <div class="mobileWrapper">
+            <div class="navBar">
+                <div class="navSubBar">
+                    <button class="navLink" id="toAbil">Abilities</button>
+                    <button class="navLink" id="toChar">Characters</button>
+                    <button class="navLink" id="toEnem">Enemies</button>
+                </div>
+                <div class="navSubBar">
+                    <button class="navLink" id="toPower">Powerups</button>
+                    <button class="navLink" id="toMove">Movement</button>
+                    <button class="navLink" id="toMedia">Media</button>
+                </div>
+            </div>
             <div class="header">
                 <img class="logo" src="images/logo.gif" />
                 <div class="introTriangleWrapper"><div class="introTriangle"></div></div>
-                <img class="eclo1" src="images/eclo1.png" />
+                <img class="eclo1" src="images/eclo1.gif" />
             </div>
 
             <div class="introBlock contentBlock">
-                <div class="contentWrapper">
+                <div class="contentWrapper fadeScroll">
                     <div class="introTitle titleText">
                         <div class="topLine">A <b>new era</b> of</div>
                         <br><div class="bottomLine"><b>rogue-lite action platformers!</b></div>
@@ -41,28 +53,118 @@
 
             <!-- Discuss abilities and Eclo lore -->
             <div class="abilitiesBlock">
+                <div class="abilitiesBlock contentBlock">
+                    <div class="abilityCarousel carousel fadeScroll">
+                        <div class="carouselList">
+                            <img class="carouselItem" id="bloom" src="images/abilities/bloom.gif"/>
+                            <img class="carouselItem" id="crown" src="images/abilities/crown.gif"/>
+                            <img class="carouselItem" id="exec" src="images/abilities/exec.gif"/>
+                            <img class="carouselItem" id="rage" src="images/abilities/rage.gif"/>
+                        </div>
+                        <div class="carouselButtons">
+                            <button class="prevButton">&lt;</button>
+                            <button class="nextButton">&gt;</button>
+                        </div>
+                        <div class="carouselInfo">
+                            <div class="carouselTitle"></div>
+                            <div class="carouselStats">
+                                <div>Rarity: <span class="rarityText rare"></span></div>
+                                <div>Cost: <span class="costText"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="carouselDesc">
+                            </div>
+                            <br>
+                            <div class="carouselFlavor">
+                            </div>
+                        </div>
+                    </div>
 
-            </div>
-            <!-- Discuss other characters and story elements -->
-            <div class="characterBlock">
-
+                    <div class="contentWrapper fadeScroll">
+                        <div class="abilitiesTitle titleText">
+                            <div class="topLine">Half <b>deity</b></div>
+                            <br><div class="bottomLine"> Half <b>mortal</b></div>
+                            <br><div class="bottomLine"> <b>All Powerful!</b></div>
+                        </div>
+                        <p class="blockParagraph">
+                            Play as <b>Eclo!</b> You are a half-deity known as a <b>Demilord</b> with access to a <b>legendary relic</b>
+                            that allows you to conjure <b>weapons</b> that you've seen.
+                            <br><br>
+                            On a diplomatic trip to the kingdom of <b>Scylia</b>, an <b>assassin</b> made an attempt on your life. Now you
+                            must use your <b>abilities</b> to discover the identity of your <b>unknown assailant</b>.
+                            <br><br>
+                            Something seems to be off though... <b>you can't die!</b> Each death revives you with <b>more and more confusion</b>.
+                            To add onto that, there's an <b>odd voice</b> in your mind that seems to be getting <b>louder and louder...</b>
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <br>
-            <div class="line">
+            <div class="line fadeScroll">
+                <img src="images/decor/line.png" />
+            </div>
+            <br>
+
+            <!-- Discuss other characters and story elements -->
+            <div class="charactersBlock contentBlock">
+                <div class="characterCarousel carousel fadeScroll">
+                    <div class="carouselList">
+                        <img class="carouselItem" id="riadne" src="images/characters/riadne.gif"/>
+                        <img class="carouselItem" id="daegon" src="images/characters/daegon.gif"/>
+                        <img class="carouselItem" id="klous" src="images/characters/klous.gif"/>
+                        <img class="carouselItem" id="mystery" src="images/characters/mystery.gif"/>
+                        <img class="carouselItem" id="yesnila" src="images/characters/yesnila.gif"/>
+                        <img class="carouselItem" id="asthia" src="images/characters/asthia.gif"/>
+                    </div>
+                    <div class="carouselButtons">
+                        <button class="prevButton">&lt;</button>
+                        <button class="nextButton">&gt;</button>
+                    </div>
+                    <div class="carouselInfo">
+                        <div class="carouselTitle"></div>
+                        <div class="subtitleText"></div>
+                        <br>
+                        <div class="carouselDesc">
+                        </div>
+                        <br>
+                        <div class="carouselFlavor">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contentWrapper fadeScroll">
+                    <div class="characterTitle titleText">
+                        <div class="topLine">An <b>Enchanting Ensemble</b></div>
+                        <br><div class="bottomLine">of <b>Characters!</b></div>
+                    </div>
+                    <p class="blockParagraph">
+                        On your journey, meet a <b>colorful cast</b> of <b>intriguing characters</b>, each with their own
+                        <b>goals</b>, <b>motivations</b>, and <b>relationships</b>. With each revival, the characters get
+                        <b> more familiar </b> and <b>less mysterious</b>.
+                        <br><br>
+                        <b>Learn</b> about their <b>stories</b>, <b>immerse</b> yourself in their <b>worlds</b>,
+                        and if you <b>pay attention</b>, you may learn something useful to help you along your <b>adventures</b>!
+                    </p>
+                </div>
+            </div>
+
+            <br>
+            <div class="line fadeScroll">
                 <img src="images/decor/line.png" />
             </div>
             <br>
 
             <!-- Discuss standard enemies and enemy abilities -->
             <div class="enemiesBlock contentBlock">
-                <div class="enemyCarousel carousel">
+                <div class="enemyCarousel carousel fadeScroll">
                     <div class="carouselList">
                         <img class="carouselItem" id="acolyte" src="images/enemies/acolyte.gif"/>
                         <img class="carouselItem" id="endalus" src="images/enemies/endalus.gif"/>
                         <img class="carouselItem" id="herald" src="images/enemies/herald.gif"/>
                         <img class="carouselItem" id="sniper" src="images/enemies/sniper.gif"/>
-                        <img class="carouselItem" id="whirleant"src="images/enemies/whirleant.gif"/>
+                        <img class="carouselItem" id="whirleant" src="images/enemies/whirleant.gif"/>
                         <img class="carouselItem" id="zerkape" src="images/enemies/zerkape.gif"/>
                     </div>
                     <div class="carouselButtons">
@@ -70,20 +172,16 @@
                         <button class="nextButton">&gt;</button>
                     </div>
                     <div class="carouselInfo">
-                        <div class="carouselTitle">Solunar Acolyte</div>
+                        <div class="carouselTitle"></div>
                         <div class="carouselDesc">
-                            The Solunar path focuses on spells that gain special properties depending on the time of day.
-                            Their acolytes utilize powerful magics in flames, nature, and shadow.
                         </div>
                         <br>
                         <div class="carouselFlavor">
-                            "<i>The turbulent intensity of the sun, matched only by the frigid stillness of the shadows...
-                            We shall have it all...</i>" <br>- Solunar Magus Slanovon
                         </div>
                     </div>
                 </div>
 
-                <div class="contentWrapper">
+                <div class="contentWrapper fadeScroll">
                     <div class="enemiesTitle titleText">
                         <div class="topLine"><b>Each fight</b> could</div>
                         <br><div class="bottomLine">be <b>your last!</b></div>
@@ -96,24 +194,24 @@
                     </p>
                 </div>
             </div>
-            <!-- Discuss consumables, relics, and rogue-like elements -->
-            <div class="powerupBlock">
+            <!-- Discuss consumables, relics, and powerup rogue-like elements -->
+            <div class="powerupsBlock">
 
 
             </div>
-
+            <!-- Discuss movement, relics, and level generation rogue-like elements -->
             <div class="movementBlock">
 
 
             </div>
 
             <br>
-            <div class="line">
+            <div class="line fadeScroll">
                 <img src="images/decor/line.png" />
             </div>
             <br>
 
-            <div class="trailerBlock">
+            <div class="trailerBlock fadeScroll">
                 <div class="title">Trailer</div>
                 <div class="trailerFrameWrapper">
                     <img id="tlFrame" src="images/decor/ui_menu_corner.png" class="trailerFrameDecor">
