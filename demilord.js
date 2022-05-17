@@ -217,12 +217,6 @@
         });
     }
 
-    function fadeInHeader() {
-        $('.navBar').css({
-            'opacity' : $('.mobileWrapper').scrollTop()/300,
-        });
-    }
-
     function hookNavEvents() {
         $('#toAbil').click(function() {
             $('.abilitiesBlock')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
@@ -247,6 +241,15 @@
     $( document ).ready(function() {
         $('.mobileWrapper').scroll(function () {
             fadeOnScroll();
+            $('.eclo1').css({
+                'margin-bottom' : -20 +($(this).scrollTop()/50) + "%",
+                'margin-right' : -4 - ($(this).scrollTop()/40) + "%"
+             });
+
+             $('.logo').css({
+                 'bottom' : 100 + ($(this).scrollTop()/3) + "px",
+                 'left' : -($(this).scrollTop()/3) + "px"
+             });
         });
         $('.mobileWrapper').trigger('scroll');
         addEnemyInfo();
