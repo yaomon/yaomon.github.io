@@ -56,7 +56,6 @@
     flex-direction: column;
     overflow: visible;
     margin-top: 50px;
-    padding: 0 2%;
     max-width: 900px;
     width: 100%;
     height: 550px;
@@ -100,7 +99,7 @@
 .carouselTitle,
 .subtitleText {
     box-sizing: border-box;
-    padding-left: 10%;
+    padding-left: 8%;
     width: 95%;
     color: rgba(220, 220, 220, 0.9);
 }
