@@ -78,6 +78,7 @@
 .carouselInfo {
     z-index: 4;
     overflow: visible;
+    padding-bottom: 45px;
     height: 60%;
 }
 
