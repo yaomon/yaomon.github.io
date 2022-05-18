@@ -34,9 +34,9 @@
 
     function addCharInfo() {
         $("#daegon").data("info", {
-            name: "Dae Gon",
+            name: "Dae-gon",
             title: "Wyvern of the West",
-            desc: " Dae Gon is the second in command in the powerful ghost organization known as The Decade. He has great ambition, looking to overthrow the minor deity at the head of the organization by reviving the power of the old dragons and eventually ascending into godhood.",
+            desc: " Dae-gon is the second in command in the powerful ghost organization known as The Decade. He has great ambition, looking to overthrow the minor deity at the head of the organization by reviving the power of the old dragons and eventually ascending into godhood.",
             flavor: '"<i>By my hand will the strength of dieties turn paltry...</i>"',
         });
         $("#klous").data("info", {
@@ -76,7 +76,7 @@
             name: "Rising Bloom",
             rarity: "uncommon",
             cost: "3",
-            desc: "Perform a 4 hit spin that pulls in enemies hit. Hits one extra time on perfect strikes.",
+            desc: "Perform a 4 hit spin that pulls in enemies hit. Hits one extra time on Perfect Strike.",
             flavor: "There are few who can liberate themselves from the raging cyclones of the Fan of Typh.",
         });
         $("#crown").data("info", {
@@ -99,6 +99,67 @@
             cost: "4",
             desc: "Slam down with a giant club, dealing significant damage to all enemies hit and knocking up enemies around the area hit.",
             flavor: "An advanced technique involving infusing the user with the essence of ancient Titans.",
+        });
+    }
+
+    function addItemsInfo() {
+        $("#blade_dmg").data("info", {
+            name: "Scroll of Seisin",
+            rarity: "rare",
+            desc: "Gain a Spirit Blade. Your Blades deal 1 more damage.",
+            flavor: '"<i>Nothing is more infuriating than a well-made blade in the hands of a poorly-made wielder.</i>" - Silver Flash Seisin',
+        });
+        $("#blade_slash").data("info", {
+            name: "Ring of the Bladecaller",
+            rarity: "epic",
+            desc: "Gain a Spirit Blade. Your Blades now slash at the end of a strike.",
+            flavor: "A high tier relic of the School of Blades, used by masters to increase their will and push the limits of their blade control.",
+        });
+        $("#catalyst").data("info", {
+            name: "Catalyst of the Apocalypse",
+            rarity: "unique",
+            durability: "1",
+            desc: "Summon a barrage of meteors from above that does moderate damage to enemies hit.",
+            flavor: "A stone imbued by a master sorcerer of unfathomable power who has long since passed. A worthy attempt at combating the deities.",
+        });
+        $("#cyclos").data("info", {
+            name: "Blessing of the Se Ka",
+            rarity: "common",
+            desc: "Increase horizontal movement when charging attacks and abilities on the ground.",
+            flavor: "Se Ka warriors are known for their nimble footing, being able to glide on dirt as if it were ice.",
+        });
+        $("#daemon").data("info", {
+            name: "Daemonic Gaze",
+            rarity: "unique",
+            durabilty: "1",
+            desc: "Block attacks in front while used. Deal damage to blocked enemies and drop self. When colliding with enemies, deal damage to them and drop self.",
+            flavor: '"<i>It feels like... someone... something... is watching...</i>" - Unknown Scylian Soldier',
+        });
+        $("#demon_heart").data("info", {
+            name: "Heart of Nahas",
+            rarity: "unique",
+            durabilty: "1",
+            desc: "While held, make your next hit a Perfect Strike that restores a bit of health and mana. Drops self upon hitting enemy with Perfect Strike.",
+            flavor: '"<i>The heartbeats... the pounding... please... MAKE IT STOP!!!!!</i>"',
+        });
+        $("#eye").data("info", {
+            name: "Eye of Dae-gon",
+            rarity: "unique",
+            durability: "50",
+            desc: "Spew out a stream of intense fire in front while being used.",
+            flavor: "A personal artifact of the Wyvern of the West, Dae-gon. It holds a scrap of the power of one of the strongest Dragons of Scylia, Daegeon.",
+        });
+        $("#flames").data("info", {
+            name: "Heart of the Embermaiden",
+            rarity: "common",
+            desc: "Increase your maximum health by 20.",
+            flavor: "A solidified heart of a legendary remnant spirit, it is said to bring warmth and health to those around it.",
+        });
+        $("#jump").data("info", {
+            name: "Stormward Wings",
+            rarity: "common",
+            desc: "Increase jump strength.",
+            flavor: "Constra wings made from the remains of a powerful spirit remnant.",
         });
     }
 
@@ -133,20 +194,39 @@
                     desc.find(".carouselFlavor").html(info.flavor);
                     if ("cost" in info) {
                         desc.find(".costText").html(info.cost);
+                        desc.find(".cost").show();
+                    } else {
+                        desc.find(".cost").hide();
                     }
                     if ("title" in info) {
                         desc.find(".subtitleText").html(info.title);
+                        desc.find(".title").show();
+                    } else {
+                        desc.find(".title").hide();
                     }
                     if ("durability" in info) {
                         desc.find(".durabilityText").html(info.durability);
+                        desc.find(".durability").show();
+                    } else {
+                        desc.find(".durability").hide();
                     }
                     if ("rarity" in info) {
                         let rarityText = desc.find(".rarityText");
                         rarityText
-                            .removeClass("common uncommon rare epic legendary")
+                            .removeClass(
+                                "common uncommon rare epic legendary unique"
+                            )
                             .addClass(info.rarity);
                         rarityText.html(info.rarity);
+                        desc.find(".rarity").show();
+                    } else {
+                        desc.find(".rarity").hide();
                     }
+                } else {
+                    desc.find(".rarity").hide();
+                    desc.find(".durability").hide();
+                    desc.find(".title").hide();
+                    desc.find(".cost").hide();
                 }
 
                 // Change to active animation
@@ -312,6 +392,11 @@
                     let text = $(this).find(".bannerText");
                     let basePerc = scrolledAmt * 100;
                     let fadeWidth = 20;
+
+                    // Invert if needed
+                    if ($(this).hasClass("rtl")) {
+                        basePerc = 100 - basePerc;
+                    }
                     basePerc = Math.max(
                         Math.min(basePerc, 100 - fadeWidth),
                         fadeWidth
@@ -338,6 +423,7 @@
         addEnemyInfo();
         addAbilInfo();
         addCharInfo();
+        addItemsInfo();
         hookNavEvents();
         // Carousel
         $(".nextButton").click(function () {
@@ -354,8 +440,20 @@
             $(carouselEl).prepend(lastEl);
             positionCarouselItems(carouselEl);
         });
+
+        $(".carousel").on("wheel", function scrollCarousel(event) {
+            event.originalEvent.preventDefault();
+            if (event.originalEvent.deltaY > 0) {
+                let buttonEl = $(this).find(".nextButton");
+                buttonEl.click();
+            } else {
+                let buttonEl = $(this).find(".prevButton");
+                buttonEl.click();
+            }
+        });
         // Set up banners
         $("#acolyteBanner").data("source", "banner_char1/banner_char");
+        $("#movementBanner").data("source", "banner_char2/banner_char");
         // Set up carousel
         $(".abilityCarousel").find(".carouselList").data("centerVert", true);
         $(".abilityCarousel").find(".carouselList").data("hasActive", true);
@@ -363,16 +461,12 @@
         $(".enemyCarousel").find(".carouselList").data("hasActive", true);
         $(".characterCarousel").find(".carouselList").data("centerVert", false);
         $(".characterCarousel").find(".carouselList").data("hasActive", false);
-        positionCarouselItems(
-            $(".abilityCarousel").find(".carouselList"),
-            true
-        );
-        positionCarouselItems(
-            $(".characterCarousel").find(".carouselList"),
-            false
-        );
-        positionCarouselItems($(".enemyCarousel").find(".carouselList"), false);
-
+        $(".powerupCarousel").find(".carouselList").data("centerVert", true);
+        $(".powerupCarousel").find(".carouselList").data("hasActive", false);
+        positionCarouselItems($(".abilityCarousel").find(".carouselList"));
+        positionCarouselItems($(".characterCarousel").find(".carouselList"));
+        positionCarouselItems($(".enemyCarousel").find(".carouselList"));
+        positionCarouselItems($(".powerupCarousel").find(".carouselList"));
         $(".mobileWrapper").trigger("scroll");
     });
 })();
