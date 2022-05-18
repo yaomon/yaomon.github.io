@@ -1,12 +1,12 @@
 .carouselButtons {
     position: absolute;
-    bottom: 60%;
     right: 0px;
-    width: 100%;
-    max-width: 360px;
-    display: flex;
-    justify-content: space-between;
+    bottom: 60%;
     z-index: 2;
+    display: flex;
+    max-width: 360px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .enemyCarousel .carouselButtons,
@@ -15,34 +15,34 @@
 }
 
 .carouselButtons button {
-    border: none;
-    background: rgba(20, 20, 20, 0.55);
-    border-radius: 3px;
-    font-size: 2em;
     width: 50px;
     height: 50px;
-    color: rgba(220, 220, 220, 0.7);
-    font-weight: bolder;
-    transition: 0.2s;
-    filter: drop-shadow(4px 4px 4px black);
+    border: none;
+    border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
+    background: rgba(20, 20, 20, 0.55);
+    color: rgba(220, 220, 220, 0.7);
+    font-weight: bolder;
+    font-size: 2em;
+    filter: drop-shadow(4px 4px 4px black);
     -webkit-filter: drop-shadow(4px 4px 4px black);
+    transition: 0.2s;
 }
 
 .carouselButtons button:hover {
-    color: white;
     background: rgb(10, 10, 10);
-    transition: 0.2s;
+    color: white;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .carouselList {
-    height: 40%;
     position: relative;
     overflow: visible;
+    height: 40%;
 }
 
 .carouselButtons,
@@ -51,15 +51,17 @@
 }
 
 .carousel {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 900px;
     position: relative;
-    height: 550px;
     display: flex;
     flex-direction: column;
     overflow: visible;
     margin-top: 50px;
+    padding: 0 40px;
+    max-width: 900px;
+    width: 100%;
+    height: 550px;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(-90deg, transparent, rgba(0,0,0,0.4));
 }
 
 .abilityCarousel .carouselInfo {
@@ -69,22 +71,22 @@
 .carouselItem {
     position: absolute;
     bottom: 0;
-    transform-origin: right bottom;
     transition: 0.2s;
+    transform-origin: right bottom;
     pointer-events: none;
 }
 
 .carouselInfo {
-    height: 60%;
-    overflow: visible;
     z-index: 4;
+    overflow: visible;
+    height: 60%;
 }
 
 .carouselTitle {
     padding-bottom: 20px;
     font-weight: bold;
-    filter: drop-shadow(1px 1px 3px black);
     font-family: 'Press Start 2P';
+    filter: drop-shadow(1px 1px 3px black);
     -webkit-filter: drop-shadow(1px 1px 3px black);
 }
 
@@ -97,8 +99,8 @@
 .carouselFlavor,
 .carouselTitle,
 .subtitleText {
-    padding-left: 10%;
     box-sizing: border-box;
+    padding-left: 10%;
     width: 95%;
     color: rgba(220, 220, 220, 0.9);
 }
@@ -111,54 +113,54 @@
 
 .carouselStats {
     display: flex;
-    justify-content: space-between;
+    max-width: 540px;
     width: 90%;
-    max-width: 400px;
+    justify-content: space-between;
 }
 
 .rarityText {
-    transition: 0.2s;
     text-transform: uppercase;
-    -webkit-text-fill-color: transparent;
+    transition: 0.2s;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
+    -webkit-text-fill-color: transparent;
 }
 
 .rarityText.common{
-    text-transform: uppercase;
-    text-shadow: 0px 0px 3px rgba(195, 195, 195, 0.3);
     background: -webkit-linear-gradient(90deg, rgb(210, 210, 210), rgb(129, 129, 129));
     -webkit-background-clip: text;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px rgba(195, 195, 195, 0.3);
 }
 
 .rarityText.uncommon{
-    text-transform: uppercase;
-    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
     background: -webkit-linear-gradient(90deg, rgb(255, 255, 255), rgb(144, 144, 144));
     -webkit-background-clip: text;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
 }
 
 .rarityText.rare{
-    text-transform: uppercase;
-    text-shadow: 0px 0px 3px rgba(0, 255, 255, 0.3);
     background: -webkit-linear-gradient(90deg, rgb(124, 144, 255), rgb(222, 251, 255));
     -webkit-background-clip: text;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px rgba(0, 255, 255, 0.3);
 }
 
 .rarityText.epic{
-    text-transform: uppercase;
-    text-shadow: 0px 0px 3px rgba(255, 0, 225, 0.3);
     background: -webkit-linear-gradient(90deg, rgb(255, 124, 222), rgb(240, 222, 255));
     -webkit-background-clip: text;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px rgba(255, 0, 225, 0.3);
 }
 
 .rarityText.legendary{
-    text-transform: uppercase;
-    text-shadow: 0px 0px 3px rgba(255, 242, 0, 0.3);
     background: -webkit-linear-gradient(90deg, rgb(255, 203, 124), rgb(253, 255, 222));
     -webkit-background-clip: text;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px rgba(255, 242, 0, 0.3);
 }
 
 .costText {
@@ -167,10 +169,10 @@
 
 .rarityText,
 .costText {
-    font-family: 'Press Start 2P';
     padding-left: 6px;
     vertical-align: middle;
     font-weight: bold;
+    font-family: 'Press Start 2P';
 }
 
 .carouselFlavor {
