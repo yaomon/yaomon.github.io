@@ -16,11 +16,12 @@
     overflow-x: hidden;
     width: 100%;
     height: 100%;
+    line-height: 1.5;
 }
 
 .contentBlock {
     overflow: visible;
-    padding: 60px 0px;
+    padding-bottom: 100px;
     width: 100%;
 }
 
@@ -38,7 +39,7 @@
     margin-left: auto;
     width: 90%;
     text-align: center;
-    font-size: calc(11px + 0.4vw);
+    font-size: calc(11.5px + 0.45vw);
     align-self: flex-end;
 }
 
@@ -48,8 +49,15 @@
 }
 
 .blockParagraph b {
-    color: rgb(220, 220, 240);
-    text-shadow: 0px 0px 4px red;
+    padding: 1px 9px ;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10%;
+    background: -webkit-linear-gradient(0deg, rgba(255, 115, 0, 0.05), rgba(255, 0, 191, 0.15));
+    color:rgb(255, 222, 222);
+    text-shadow: 0px 0px 2px red;
+    line-height: 1.65;
 }
 
 .topLine {
@@ -74,7 +82,7 @@
 }
 
 .titleText {
-    font-size: calc(9px + 1vw);
+    font-size: calc(9.5px + 1.05vw);
 }
 
 .titleText b,
@@ -92,12 +100,14 @@
 }
 
 .introBlock .blockParagraph {
+    max-width: 1200px;
     align-self: center;
 }
 
 .enemiesBlock,
 .abilitiesBlock,
 .charactersBlock,
+.levelBlock,
 .powerupsBlock {
     display: flex;
     flex-wrap: wrap-reverse;
@@ -105,6 +115,7 @@
 }
 
 .enemiesBlock,
+.levelBlock,
 .abilitiesBlock {
     flex-direction: row;
 }
@@ -124,7 +135,8 @@
 .enemiesTitle,
 .abilitiesTitle,
 .characterTitle,
-.powerupTitle {
+.powerupTitle,
+.levelTitle {
     box-sizing: border-box;
     padding: 0 5%;
     padding-top: 20px;

@@ -1,14 +1,14 @@
 @keyframes logoFade {
     from {
-        opacity: 0;
         bottom: 700px;
-        width: 100%;
         max-width: 100%;
+        width: 100%;
+        opacity: 0;
     }
     to {
-        opacity: 1;
         bottom: 100px;
         max-width: 1142px;
+        opacity: 1;
     }
 }
 

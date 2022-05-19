@@ -8,6 +8,38 @@
     justify-content: space-between;
 }
 
+.carouselBG {
+    position: absolute;
+    z-index: -3;
+    filter: saturate(70%) brightness(70%) contrast(70%) blur(2px);
+    -webkit-filter: saturate(70%) brightness(70%) contrast(70%) blur(2px);
+    transform: scale(300%);
+    -webkit-transform: scale(300%);
+    -moz-transform: scale(300%);
+    -ms-transform: scale(300%);
+    -o-transform: scale(300%);
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px -150px 150px 0 rgba(0, 0, 0, 0.8);
+    content: '';
+}
+
+.carouselButtons.wide {
+    top: 15%;
+    left: 0;
+    margin: 0;
+    padding: 0 5%;
+    max-width: 100%;
+}
+
+
 .powerupCarousel .carouselButtons,
 .abilityCarousel .carouselButtons {
     bottom: 60%;
@@ -16,6 +48,10 @@
 .enemyCarousel .carouselButtons,
 .characterCarousel .carouselButtons  {
     bottom: 80%;
+}
+
+.carousel.levelCarousel {
+    overflow: hidden;
 }
 
 .carouselButtons button {
@@ -49,6 +85,13 @@
     height: 40%;
 }
 
+.carouselList.wide {
+    display: flex;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
 .carouselButtons,
 .carouselList {
     box-sizing: border-box;
@@ -64,8 +107,13 @@
     max-width: 900px;
     width: 100%;
     height: 550px;
-    border-radius: 40px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
     background: -webkit-linear-gradient(-90deg, transparent 0%, transparent 60%, rgba(0,0,0,0.4) 100%);
+    box-shadow: 0px 9px 9px -9px rgba(0,0,0,0.7);
 }
 
 .abilityCarousel .carouselInfo,
@@ -80,6 +128,16 @@
     transform-origin: right bottom;
     pointer-events: none;
 }
+
+.wide .carouselItem {
+    position: relative;
+    padding: 10%;
+    width: 60%;
+    filter: drop-shadow(8px 8px 18px rgba(0, 0, 0, 0.9));
+    -webkit-filter: drop-shadow(8px 8px 18px rgba(0, 0, 0, 0.9));
+    transform-origin: center center;
+}
+
 
 .carouselInfo {
     z-index: 4;
@@ -120,7 +178,16 @@
 .carouselDesc,
 .carouselStats,
 .carouselFlavor {
-    font-size: calc(9px + 0.6vw);
+    font-size: calc(8.5px + 0.55vw);
+}
+
+.carouselDesc {
+    text-shadow: 2px 2px 2px black;
+}
+
+.carouselInfo.wide {
+    padding-top: 30px;
+    height: 70%;
 }
 
 .carouselStats {

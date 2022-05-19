@@ -1,4 +1,7 @@
 (function () {
+    let touchstartX = 0;
+    let touchendX = 0;
+
     function addEnemyInfo() {
         $("#acolyte").data("info", {
             name: "Solunar Acolyte",
@@ -163,12 +166,17 @@
         });
     }
 
+    function addLevelsInfo() {
+        $("#lv1").data("info", {
+            desc: "Believe it or not, the bustling <b>Deadwoods</b> was once a barren field. Ages ago, there was a great war, the <b>War of Ages</b>. Battles raged across the field, and <b>corpses would fertilize the soil for years to come</b>. Nutrients soaked deep into            the land, and from this great travesty came a <b>forest brimming with life</b>.            <br><br>            However, those who died did not rest easy. The pure concentration of mortal mana causes            <b> odd mutations in the life that grows</b>. Rumors claim that there is a <b>great guardian of the Deadwoods</b>.            The fabled guardian <b>drives out any powerful entities in the forest</b>, assuming that any <b>being of significant strength</b> would be the <b>catalyst of another great war</b>.",
+        });
+    }
+
     function positionCarouselItems(carouselEl) {
         let items = $(carouselEl.find(".carouselItem"));
         let desc = $($(carouselEl).siblings(".carouselInfo"));
         let centerVert = carouselEl.data("centerVert");
         let numItems = items.length;
-        items.removeClass("selected");
         items.each(function (index) {
             if (index === 0) {
                 let bottom = 0;
@@ -184,8 +192,6 @@
                     filter: "drop-shadow(0px 1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(0px -1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(1px 0px 1px rgba(200, 200, 200, 0.2)) drop-shadow(-1px 0px 1px rgba(200, 200, 200, 0.2))",
                     right: 180 - $(this).width() * 2 + "px", // Lots of math here to "center" the bottom right origin image
                 });
-
-                $(this).addClass("selected");
                 // Update info
                 let info = $(this).data("info");
                 if (info !== undefined) {
@@ -277,6 +283,60 @@
         });
     }
 
+    function positionCenterCarouselItems(carouselEl) {
+        let items = $(carouselEl.find(".carouselItem"));
+        let desc = $($(carouselEl).siblings(".carouselInfo"));
+        items.each(function (index) {
+            if (index === 0) {
+                $(this).show();
+                // Update info
+                let info = $(this).data("info");
+                if (info !== undefined) {
+                    desc.find(".carouselTitle").html(info.name);
+                    desc.find(".carouselDesc").html(info.desc);
+                    desc.find(".carouselFlavor").html(info.flavor);
+                    if ("cost" in info) {
+                        desc.find(".costText").html(info.cost);
+                        desc.find(".cost").show();
+                    } else {
+                        desc.find(".cost").hide();
+                    }
+                    if ("title" in info) {
+                        desc.find(".subtitleText").html(info.title);
+                        desc.find(".title").show();
+                    } else {
+                        desc.find(".title").hide();
+                    }
+                    if ("durability" in info) {
+                        desc.find(".durabilityText").html(info.durability);
+                        desc.find(".durability").show();
+                    } else {
+                        desc.find(".durability").hide();
+                    }
+                    if ("rarity" in info) {
+                        let rarityText = desc.find(".rarityText");
+                        rarityText
+                            .removeClass(
+                                "common uncommon rare epic legendary unique"
+                            )
+                            .addClass(info.rarity);
+                        rarityText.html(info.rarity);
+                        desc.find(".rarity").show();
+                    } else {
+                        desc.find(".rarity").hide();
+                    }
+                } else {
+                    desc.find(".rarity").hide();
+                    desc.find(".durability").hide();
+                    desc.find(".title").hide();
+                    desc.find(".cost").hide();
+                }
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
     function hookNavEvents() {
         $("#toAbil").click(function () {
             $(".abilitiesBlock")[0].scrollIntoView({
@@ -307,7 +367,7 @@
             });
         });
         $("#toMove").click(function () {
-            $(".movementBlock")[0].scrollIntoView({
+            $(".levelBlock")[0].scrollIntoView({
                 behavior: "smooth",
                 block: "center",
                 inline: "nearest",
@@ -424,6 +484,7 @@
         addAbilInfo();
         addCharInfo();
         addItemsInfo();
+        addLevelsInfo();
         hookNavEvents();
         // Carousel
         $(".nextButton").click(function () {
@@ -431,26 +492,56 @@
             let firstEl = $($(carouselEl).find(".carouselItem")).first();
             $(firstEl).detach();
             $(carouselEl).append(firstEl);
-            positionCarouselItems(carouselEl);
+            if (carouselEl.hasClass("wide")) {
+                positionCenterCarouselItems(carouselEl);
+            } else {
+                positionCarouselItems(carouselEl);
+            }
         });
         $(".prevButton").click(function () {
             let carouselEl = $($(this).parent()).siblings(".carouselList");
             let lastEl = $($(carouselEl).find(".carouselItem")).last();
             $(lastEl).detach();
             $(carouselEl).prepend(lastEl);
-            positionCarouselItems(carouselEl);
-        });
-
-        $(".carousel").on("wheel", function scrollCarousel(event) {
-            event.originalEvent.preventDefault();
-            if (event.originalEvent.deltaY > 0) {
-                let buttonEl = $(this).find(".nextButton");
-                buttonEl.click();
+            if (carouselEl.hasClass("wide")) {
+                positionCenterCarouselItems(carouselEl);
             } else {
-                let buttonEl = $(this).find(".prevButton");
-                buttonEl.click();
+                positionCarouselItems(carouselEl);
             }
         });
+
+        $(".carousel").each(function () {
+            // Change on scroll
+            $(this).on("wheel", (event) => {
+                event.originalEvent.preventDefault();
+                if (event.originalEvent.deltaY > 0) {
+                    let buttonEl = $(this).find(".nextButton");
+                    buttonEl.click();
+                } else {
+                    let buttonEl = $(this).find(".prevButton");
+                    buttonEl.click();
+                }
+            });
+
+            // Change on swipe
+            $(this).on("touchstart", (event) => {
+                touchstartX = event.changedTouches[0].screenX;
+            });
+
+            $(this).on("touchend", (event) => {
+                touchendX = event.changedTouches[0].screenX;
+                diff = Math.abs(touchendX - touchstartX);
+                if (touchendX < touchstartX && diff > 60) {
+                    let buttonEl = $(this).find(".nextButton");
+                    buttonEl.click();
+                }
+                if (touchendX > touchstartX && diff > 60) {
+                    let buttonEl = $(this).find(".prevButton");
+                    buttonEl.click();
+                }
+            });
+        });
+
         // Set up banners
         $("#acolyteBanner").data("source", "banner_char1/banner_char");
         $("#movementBanner").data("source", "banner_char2/banner_char");
@@ -467,6 +558,8 @@
         positionCarouselItems($(".characterCarousel").find(".carouselList"));
         positionCarouselItems($(".enemyCarousel").find(".carouselList"));
         positionCarouselItems($(".powerupCarousel").find(".carouselList"));
+
+        positionCenterCarouselItems($(".levelCarousel").find(".carouselList"));
         $(".mobileWrapper").trigger("scroll");
     });
 })();
