@@ -464,7 +464,7 @@
                     let grad =
                         "-webkit-linear-gradient( 0deg, transparent 0%, transparent " +
                         (basePerc - fadeWidth) +
-                        "%, rgb(255, 222, 222) " +
+                        "%, rgb(255, 200, 255) " +
                         basePerc +
                         "%, transparent " +
                         (basePerc + fadeWidth) +
