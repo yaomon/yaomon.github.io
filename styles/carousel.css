@@ -181,7 +181,7 @@
 .carouselDesc,
 .carouselStats,
 .carouselFlavor {
-    font-size: calc(8.5px + 0.55vw);
+    font-size: clamp(9.5px, calc(8.5px + 0.55vw), 19px);
 }
 
 .carouselDesc {

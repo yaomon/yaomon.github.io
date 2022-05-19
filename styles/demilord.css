@@ -39,7 +39,7 @@
     margin-left: auto;
     width: 90%;
     text-align: center;
-    font-size: calc(11.5px + 0.45vw);
+    font-size: clamp(10px, calc(11.5px + 0.45vw), 20px);
     align-self: flex-end;
 }
 
@@ -83,7 +83,7 @@
 
 .titleText {
     position: relative;
-    font-size: calc(9.5px + 1.05vw);
+    font-size: clamp(8px, calc(9.5px + 1.05vw), 19px);
 }
 
 .titleTextSplatter {

@@ -64,6 +64,6 @@
 
 .soMedBlock p {
     color: white;
-    font-size: calc(5px + 0.5vw);
+    font-size: clamp(4px, calc(3px + 0.6vw), 8px);
     font-family: 'Press Start 2P';
 }

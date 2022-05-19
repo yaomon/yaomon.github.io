@@ -2,6 +2,11 @@
     let touchstartX = 0;
     let touchendX = 0;
 
+    function preloadImage(url) {
+        var img = new Image();
+        img.src = url;
+    }
+
     function addEnemyInfo() {
         $("#acolyte").data("info", {
             name: "Solunar Acolyte",
@@ -421,6 +426,16 @@
         });
     }
 
+    function preloadBanners() {
+        $(".banner").each(function () {
+            let sourceFront = "images/banner/" + $(this).data("source");
+            for (var i = 1; i <= 29; i++) {
+                let newSrc = sourceFront + i + ".png";
+                preloadImage(newSrc);
+            }
+        });
+    }
+
     $(document).ready(function () {
         $(".mobileWrapper").scroll(function () {
             fadeOnScroll();
@@ -486,6 +501,7 @@
         addItemsInfo();
         addLevelsInfo();
         hookNavEvents();
+
         // Carousel
         $(".nextButton").click(function () {
             let carouselEl = $($(this).parent()).siblings(".carouselList");
@@ -550,6 +566,8 @@
         // Set up banners
         $("#acolyteBanner").data("source", "banner_char1/banner_char");
         $("#movementBanner").data("source", "banner_char2/banner_char");
+
+        preloadBanners();
         // Set up carousel
         $(".abilityCarousel").find(".carouselList").data("centerVert", true);
         $(".abilityCarousel").find(".carouselList").data("hasActive", true);
