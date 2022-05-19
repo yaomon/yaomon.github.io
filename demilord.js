@@ -528,7 +528,7 @@
 
         $(".carousel").each(function () {
             // Change on scroll
-            $(this).on("wheel", (event) => {
+            /*$(this).on("wheel", (event) => {
                 event.originalEvent.preventDefault();
                 let scrollDist = Math.abs(event.originalEvent.deltaY);
                 console.log(scrollDist);
@@ -539,7 +539,7 @@
                     let buttonEl = $(this).find(".prevButton");
                     buttonEl.click();
                 }
-            });
+            });*/
 
             // Change on swipe
             $(this).on("touchstart", (event) => {
@@ -577,12 +577,9 @@
         $(".characterCarousel").find(".carouselList").data("hasActive", false);
         $(".powerupCarousel").find(".carouselList").data("centerVert", true);
         $(".powerupCarousel").find(".carouselList").data("hasActive", false);
-        positionCarouselItems($(".abilityCarousel").find(".carouselList"));
-        positionCarouselItems($(".characterCarousel").find(".carouselList"));
-        positionCarouselItems($(".enemyCarousel").find(".carouselList"));
-        positionCarouselItems($(".powerupCarousel").find(".carouselList"));
 
-        positionCenterCarouselItems($(".levelCarousel").find(".carouselList"));
+        $(".nextButton").click();
+        $(".prevButton").click();
         $(".mobileWrapper").trigger("scroll");
     });
 })();

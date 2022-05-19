@@ -9,7 +9,6 @@
     width: 100%;
     background: -webkit-linear-gradient(-90deg, black 0%, rgba(40, 40, 40, 0.82) 80%, transparent);
     align-items: center;
-    backdrop-filter: blur(4px);
     justify-content: space-evenly;
 }
 
