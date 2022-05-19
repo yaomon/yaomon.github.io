@@ -2,9 +2,12 @@
 .trailerBlock {
     display: flex;
     flex-direction: column;
+    background-image: url("../images/bgsplatter2.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     align-items: center;
 }
-
 
 .trailerWrapper {
     position: relative;
@@ -19,7 +22,7 @@
     position: relative;
     overflow: visible;
     margin-top: 50px;
-    padding: 0px;
+    padding: 5px;
     max-width: 1120px;
     max-height: 730px;
     width: 100%;
@@ -41,39 +44,4 @@
     height: 100%;
     box-shadow: inset 20px 20px 25px rgba(0, 0, 0, 0.65);
     pointer-events: none;
-}
-
-.trailerFrameDecor {
-    position: absolute;
-    transform: scale(200%);
-    -webkit-transform: scale(200%);
-    -moz-transform: scale(200%);
-    -ms-transform: scale(200%);
-    -o-transform: scale(200%);
-    pointer-events: none;
-    user-select: none;
-}
-
-#tlFrame {
-    top: -10px;
-    left: -7px;
-    z-index: -1;
-}
-
-#trFrame {
-    top: -10px;
-    right: -7px;
-    z-index: -1;
-}
-
-#blFrame {
-    bottom: -10px;
-    left: -7px;
-    z-index: 1;
-}
-
-#brFrame {
-    right: -7px;
-    bottom: -10px;
-    z-index: 1;
 }
