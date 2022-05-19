@@ -11,8 +11,8 @@
 .carouselBG {
     position: absolute;
     z-index: -3;
-    filter: saturate(70%) brightness(70%) contrast(70%) blur(2px);
-    -webkit-filter: saturate(70%) brightness(70%) contrast(70%) blur(2px);
+    filter: saturate(70%) brightness(50%) blur(1.1px);
+    -webkit-filter: saturate(70%) brightness(50%) blur(1.1px);
     transform: scale(300%);
     -webkit-transform: scale(300%);
     -moz-transform: scale(300%);

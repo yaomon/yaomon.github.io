@@ -514,6 +514,8 @@
             // Change on scroll
             $(this).on("wheel", (event) => {
                 event.originalEvent.preventDefault();
+                let scrollDist = Math.abs(event.originalEvent.deltaY);
+                console.log(scrollDist);
                 if (event.originalEvent.deltaY > 0) {
                     let buttonEl = $(this).find(".nextButton");
                     buttonEl.click();
@@ -531,11 +533,14 @@
             $(this).on("touchend", (event) => {
                 touchendX = event.changedTouches[0].screenX;
                 diff = Math.abs(touchendX - touchstartX);
-                if (touchendX < touchstartX && diff > 60) {
+                if (diff < 80) {
+                    return;
+                }
+                if (touchendX < touchstartX) {
                     let buttonEl = $(this).find(".nextButton");
                     buttonEl.click();
                 }
-                if (touchendX > touchstartX && diff > 60) {
+                if (touchendX > touchstartX) {
                     let buttonEl = $(this).find(".prevButton");
                     buttonEl.click();
                 }
