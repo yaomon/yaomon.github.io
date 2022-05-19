@@ -9,6 +9,7 @@
     width: 100%;
     background: -webkit-linear-gradient(-90deg, black 0%, rgba(40, 40, 40, 0.82) 80%, transparent);
     align-items: center;
+    backdrop-filter: blur(4px);
     justify-content: space-evenly;
 }
 
@@ -43,10 +44,6 @@
     min-width: 120px;
     height: 100%;
     border: none;
-    border-top-left-radius: 250%;
-    border-top-right-radius: 450%;
-    border-bottom-right-radius: 250%;
-    border-bottom-left-radius: 200px;
     background: transparent;
     color: rgb(234, 234, 234);
     text-shadow: 0px 0px 4px black;
@@ -62,11 +59,12 @@
     -moz-transform: rotate(4deg);
     -ms-transform: rotate(4deg);
     -o-transform: rotate(4deg);
-    backdrop-filter: blur(4px);
 }
 
 .navLink:hover {
-    background: -webkit-linear-gradient(0deg, rgba(212, 103, 103, 1) 0%, rgba(160, 42, 42, 0.8) 50%, transparent 100%);
+    background-image: url("../images/bgsplatter.png");
+    background-size: contain;
+    background-repeat: no-repeat;
     color: rgb(255, 255, 255, 1);
     cursor: pointer;
     transition: 0.2s;

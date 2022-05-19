@@ -29,7 +29,7 @@
 
 .banner .char {
     position: absolute;
-    bottom: 0;
+    bottom: calc(130px + -5vw);
     z-index: -2;
     min-width: 1200px;
     width: 100%;
