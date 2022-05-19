@@ -378,13 +378,13 @@
                 inline: "nearest",
             });
         });
-        $("#toMedia").click(function () {
+        /* $("#toMedia").click(function () {
             $(".trailerBlock")[0].scrollIntoView({
                 behavior: "smooth",
                 block: "center",
                 inline: "nearest",
             });
-        });
+        });*/
     }
 
     function fadeOnScroll() {
