@@ -139,14 +139,14 @@
         $("#daemon").data("info", {
             name: "Daemonic Gaze",
             rarity: "unique",
-            durabilty: "1",
+            durability: "1",
             desc: "Block attacks in front while used. Deal damage to blocked enemies and drop self. When colliding with enemies, deal damage to them and drop self.",
             flavor: '"<i>It feels like... someone... something... is watching...</i>" - Unknown Scylian Soldier',
         });
         $("#demon_heart").data("info", {
             name: "Heart of Nahas",
             rarity: "unique",
-            durabilty: "1",
+            durability: "1",
             desc: "While held, make your next hit a Perfect Strike that restores a bit of health and mana. Drops self upon hitting enemy with Perfect Strike.",
             flavor: '"<i>The heartbeats... the pounding... please... MAKE IT STOP!!!!!</i>"',
         });
