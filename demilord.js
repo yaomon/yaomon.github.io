@@ -50,8 +50,8 @@
         $("#klous").data("info", {
             name: "Klous",
             title: "Grand Researcher",
-            desc: "Klous has an unhealthy obsession with knowledge. Though he isn’t particularly without ethics, he has vowed to let his pursuit for knowledge guide his every action. He is convinced that this is the necessary creen to further the progress of humanity.",
-            flavor: '"<i>Books are to a mind as a whetstone to a sword; though while a sword can slay hundreds, a mind can influence thousands.</i>"',
+            desc: "Klous has an unhealthy obsession with knowledge. Though he isn’t particularly without ethics, he has vowed to let his pursuit for knowledge guide his every action. He is convinced that this is the necessary creed to further the progress of humanity.",
+            flavor: '"<i>Books are to a mind as a whetstones are to a sword. Though while a sword can slay hundreds, a mind can influence thousands.</i>"',
         });
         $("#mystery").data("info", {
             name: "???",
