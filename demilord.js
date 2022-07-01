@@ -45,13 +45,13 @@
             name: "Dae-gon",
             title: "Wyvern of the West",
             desc: " Dae-gon is the second in command in the powerful ghost organization known as The Decade. He has great ambition, looking to overthrow the minor deity at the head of the organization by reviving the power of the old dragons and eventually ascending into godhood.",
-            flavor: '"<i>By my hand will the strength of dieties turn paltry...</i>"',
+            flavor: '"<i>The strength of dieties will turn paltry by my hand...</i>"',
         });
         $("#klous").data("info", {
             name: "Klous",
             title: "Grand Researcher",
             desc: "Klous has an unhealthy obsession with knowledge. Though he isn’t particularly without ethics, he has vowed to let his pursuit for knowledge guide his every action. He is convinced that this is the necessary creen to further the progress of humanity.",
-            flavor: '"<i>Curious, though this specific peculiarity fails to pertain to the discussion at hand.</i>"',
+            flavor: '"<i>Books are to a mind as a whetstone to a sword; though while a sword can slay hundreds, a mind can influence thousands.</i>"',
         });
         $("#mystery").data("info", {
             name: "???",
