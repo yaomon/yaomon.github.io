@@ -173,7 +173,7 @@
 
     function addLevelsInfo() {
         $("#lv1").data("info", {
-            desc: "Believe it or not, the bustling <b>Deadwoods</b> was once a barren field. Ages ago, there was a great war, the <b>War of Ages</b>. Battles raged across the field, and <b>corpses would fertilize the soil for years to come</b>. Nutrients soaked deep into            the land, and from this great travesty came a <b>forest brimming with life</b>.            <br><br>            However, those who died did not rest easy. The pure concentration of mortal mana causes            <b> odd mutations in the life that grows</b>. Rumors claim that there is a <b>great guardian of the Deadwoods</b>.            The fabled guardian <b>drives out any powerful entities in the forest</b>, assuming that any <b>being of significant strength</b> would be the <b>catalyst of another great war</b>.",
+            desc: "The bustling <b>Deadwoods</b> was once a barren field. Ages ago, the great <b>War of Ages</b> raged across the fields. <b>Corpses would fertilize the land for years to come</b>. Nutrients soaked deep into the land, and this travesty birthed a <b>forest brimming with life</b>. <br><br> However, those who died did not rest easy. The pure concentration of mortal Mana causes <b> odd mutations in the life that grows</b>. Rumors claim that a <b> guardian of the Deadwoods drives out any powerful entities in the forest</b>. They say any <b>being of significant strength</b> would be the <b>catalyst of another great war</b>.",
         });
     }
 
@@ -527,7 +527,7 @@
         });
 
         $(".carousel").each(function () {
-            // Change on scroll
+            // Change carousel item on scroll
             /*$(this).on("wheel", (event) => {
                 event.originalEvent.preventDefault();
                 let scrollDist = Math.abs(event.originalEvent.deltaY);
@@ -569,13 +569,13 @@
 
         preloadBanners();
         // Set up carousel
-        $(".abilityCarousel").find(".carouselList").data("centerVert", true);
+        $(".abilityCarousel").find(".carouselList").data("centerVert", false);
         $(".abilityCarousel").find(".carouselList").data("hasActive", true);
         $(".enemyCarousel").find(".carouselList").data("centerVert", false);
         $(".enemyCarousel").find(".carouselList").data("hasActive", true);
         $(".characterCarousel").find(".carouselList").data("centerVert", false);
         $(".characterCarousel").find(".carouselList").data("hasActive", false);
-        $(".powerupCarousel").find(".carouselList").data("centerVert", true);
+        $(".powerupCarousel").find(".carouselList").data("centerVert", false);
         $(".powerupCarousel").find(".carouselList").data("hasActive", false);
 
         $(".nextButton").click();

@@ -21,7 +21,10 @@
 
 .contentBlock {
     overflow: visible;
-    padding-bottom: 150px;
+    margin: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    max-width: 1400px;
     width: 100%;
 }
 
@@ -33,19 +36,18 @@
 }
 
 .blockParagraph {
-    margin-top: 30px;
-    margin-right: auto;
-    margin-bottom: 30px;
-    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 90%;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-size: clamp(10px, calc(11.5px + 0.45vw), 20px);
-    align-self: flex-end;
+    align-self: center;
 }
 
 .titleText,
 .blockParagraph {
-    max-width: 900px;
+    max-width: 700px;
 }
 
 .blockParagraph b {
@@ -76,15 +78,19 @@
 
 .titleText,
 .title {
-    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     font-weight: bold;
     font-family: "Press Start 2P";
-    filter: drop-shadow(1px 1px 3px black);
-    -webkit-filter: drop-shadow(1px 1px 3px black);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
 }
 
 .titleText {
     position: relative;
+    max-width: 700px;
     font-size: clamp(8px, calc(9.5px + 1.05vw), 19px);
 }
 
@@ -92,17 +98,17 @@
     position: absolute;
     top: 0;
     z-index: -4;
-    width: 150%;
+    width: 110%;
     height: 120%;
     opacity: 0.7;
 }
 
 .titleTextSplatter.right {
-    right: -25%;
+    right: -5%;
 }
 
 .titleTextSplatter.left {
-    left: -40%;
+    left: 0%;
 }
 
 .titleText b,
@@ -120,7 +126,7 @@
 }
 
 .introBlock .blockParagraph {
-    max-width: 1200px;
+    max-width: 800px;
     align-self: center;
 }
 
@@ -131,7 +137,9 @@
 .powerupsBlock {
     display: flex;
     flex-wrap: wrap-reverse;
-    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: space-between;
 }
 
 .enemiesBlock,
@@ -147,7 +155,7 @@
 
 .introTitle {
     box-sizing: border-box;
-    margin-top: -80px;
+    margin-top: -60px;
     padding-left: 10%;
     align-self: flex-start;
 }
@@ -165,4 +173,14 @@
 
 .title {
     font-size: 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
+    .contentWrapper {
+        margin-bottom: 100px;
+    }
+
+    .carousel {
+        height: 400px;
+    }
 }
