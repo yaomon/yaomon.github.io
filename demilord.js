@@ -194,7 +194,7 @@
                     bottom: bottom + "px",
                     "z-index": -index,
                     transform: "scale(400%)",
-                    filter: "drop-shadow(0px 1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(0px -1px 1px rgba(200, 200, 200, 0.2)) drop-shadow(1px 0px 1px rgba(200, 200, 200, 0.2)) drop-shadow(-1px 0px 1px rgba(200, 200, 200, 0.2))",
+                    filter: "drop-shadow(0px 1px 1px rgba(200, 200, 200, 0.2))",
                     right: 180 - $(this).width() * 2 + "px", // Lots of math here to "center" the bottom right origin image
                 });
                 // Update info

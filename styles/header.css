@@ -34,8 +34,8 @@
     margin-left: 2%;
     max-width: 1142px;
     width: 100%;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
-    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
     animation: logoFade 1s 1;
     -webkit-animation: logoFade 0.5s 1;
     object-fit: contain;
@@ -46,8 +46,8 @@
     margin-right: -4%;
     margin-bottom: -20%;
     width: 45%;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
-    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
     transform-origin: middle right;
     animation: eclo1Fade 1s 1;
     -webkit-animation: eclo1Fade 0.5s 1;

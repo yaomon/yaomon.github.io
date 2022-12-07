@@ -84,8 +84,8 @@
     padding-bottom: 30px;
     font-weight: bold;
     font-family: "Press Start 2P";
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
-    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)) drop-shadow(4px 4px 16px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    -webkit-filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
 }
 
 .titleText {
