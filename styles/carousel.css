@@ -267,7 +267,7 @@
 
 @media only screen and (max-width: 768px) {
     .carouselList {
-        margin-top: 180px;
+        margin-top: 80px;
     }
 
     .enemyCarousel .carouselButtons,
