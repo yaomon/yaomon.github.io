@@ -179,6 +179,10 @@
     .carousel {
         height: 600px;
     }
+
+    .powerupCarousel.carousel {
+        height: 400px;
+    }
 }
 
 @media only screen and (min-width: 768px) {

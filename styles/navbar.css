@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     overflow: visible;
     width: 100%;
-    background: -webkit-linear-gradient(-90deg, rgba(40, 40, 40, 0.85) 0%, rgba(40, 40, 40, 0.45) 80%, transparent);
+    background: -webkit-linear-gradient(-90deg, rgba(20, 20, 20, 0.95) 0%, rgba(40, 40, 40, 0.85) 90%, transparent);
     align-items: center;
     backdrop-filter: blur(4px);
     justify-content: space-evenly;
@@ -21,7 +21,6 @@
 
 .navLink {
     box-sizing: border-box;
-    padding: 20px 20px;
     min-width: 120px;
     height: 100%;
     border: none;
@@ -49,4 +48,19 @@
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    .navLink {
+        padding: 15px 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navLink {
+        padding: 10px 20px;
+    }
 }
