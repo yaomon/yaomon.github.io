@@ -32,17 +32,12 @@
 }
 
 .carouselButtons.wide {
-    top: 10%;
     left: 0;
     margin: 0;
     padding: 0 5%;
     max-width: 100%;
 }
 
-
-.powerupCarousel .carouselButtons {
-    bottom: 75%;
-}
 
 .enemyCarousel .carouselButtons,
 .characterCarousel .carouselButtons,
@@ -275,6 +270,15 @@
     .abilityCarousel .carouselButtons  {
         bottom: 55%;
     }
+
+    .carouselButtons.wide {
+        top: 25%;
+    }
+
+
+    .powerupCarousel .carouselButtons {
+        bottom: 60%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -282,5 +286,14 @@
     .characterCarousel .carouselButtons,
     .abilityCarousel .carouselButtons  {
         bottom: 90%;
+    }
+
+    .carouselButtons.wide {
+        top: 15%;
+    }
+
+
+    .powerupCarousel .carouselButtons {
+        bottom: 70%;
     }
 }
