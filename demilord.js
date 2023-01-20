@@ -173,7 +173,7 @@
 
     function addLevelsInfo() {
         $("#lv1").data("info", {
-            desc: "The bustling <b>Deadwoods</b> was once a barren field. Ages ago, the great <b>War of Ages</b> raged across the fields. <b>Corpses would fertilize the land for years to come</b>. Nutrients soaked deep into the land, and this travesty birthed a <b>forest brimming with life</b>. <br><br> However, those who died did not rest easy. The pure concentration of mortal Mana causes <b> odd mutations in the life that grows</b>. Rumors claim that a <b> guardian of the Deadwoods drives out any powerful entities in the forest</b>. They say any <b>being of significant strength</b> would be the <b>catalyst of another great war</b>.",
+            desc: "The bustling <b>Deadwoods</b> was once a barren field. Years ago, the great <b>War of Ages</b> ravaged the fields. <b>Corpses would fertilize the land for years to come</b>. This travesty birthed a <b>forest brimming with life</b>. <br><br> However, those who passed did not rest easy. The pure concentration of mortal Mana causes <b> odd mutations in the life that grows</b>. Rumors claim that a <b> guardian of the Deadwoods drives out any powerful entities in the forest</b>. They say any <b>being of significant strength</b> would be the <b>catalyst of another great war</b>.",
         });
     }
 
@@ -442,10 +442,17 @@
             let currTop = $(this).scrollTop();
             let vh = $(this).height();
 
-            $(".eclo1").css({
-                "margin-bottom": -20 + currTop / 50 + "%",
-                "margin-right": -4 - currTop / 40 + "%",
-            });
+            if (screen.width > 768) {
+                $(".eclo1").css({
+                    "margin-bottom": -20 + currTop / 50 + "%",
+                    "margin-right": -4 - currTop / 40 + "%",
+                });
+            } else {
+                $(".eclo1").css({
+                    "margin-bottom": currTop / 50 + "%",
+                    "margin-right": -4 - currTop / 40 + "%",
+                });
+            }
 
             $(".logo").css({
                 bottom: 100 + currTop / 3 + "px",

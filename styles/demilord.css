@@ -78,10 +78,6 @@
 
 .titleText,
 .title {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
     font-weight: bold;
     font-family: "Press Start 2P";
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
@@ -177,10 +173,20 @@
 
 @media only screen and (max-width: 768px) {
     .contentWrapper {
-        margin-bottom: 100px;
+        margin-bottom: 40px;
     }
 
     .carousel {
-        height: 400px;
+        height: 700px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .titleText,
+    .title {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
