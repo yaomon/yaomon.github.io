@@ -47,7 +47,7 @@
 .enemyCarousel .carouselButtons,
 .characterCarousel .carouselButtons,
 .abilityCarousel .carouselButtons  {
-    bottom: 55%;
+    bottom: 90%;
 }
 
 .carousel.levelCarousel {
@@ -268,5 +268,19 @@
 @media only screen and (max-width: 768px) {
     .carouselList {
         margin-top: 180px;
+    }
+
+    .enemyCarousel .carouselButtons,
+    .characterCarousel .carouselButtons,
+    .abilityCarousel .carouselButtons  {
+        bottom: 55%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .enemyCarousel .carouselButtons,
+    .characterCarousel .carouselButtons,
+    .abilityCarousel .carouselButtons  {
+        bottom: 90%;
     }
 }
